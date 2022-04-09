@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { ButtonModule } from 'primeng/button';
+import {ButtonModule} from 'primeng/button';
 // import { TableModule } from 'primeng/table';
 // import { ToastModule } from 'primeng/toast';
 // import { ProgressSpinnerModule } from 'primeng/progressspinner';
@@ -9,7 +9,7 @@ import { ButtonModule } from 'primeng/button';
 
 @NgModule({
     imports: [
-        // ButtonModule,
+        ButtonModule,
         // TableModule,
         // ToastModule,
         // ProgressSpinnerModule,
@@ -18,7 +18,7 @@ import { ButtonModule } from 'primeng/button';
         // InputTextModule,
     ],
     exports: [
-        // ButtonModule,
+        ButtonModule,
         // TableModule,
         // ToastModule,
         // ProgressSpinnerModule,
