@@ -1,6 +1,6 @@
 export type BaseResponse = {
     status: ResponseStatus;
-    messageTranslationCode?: TranslationCode;
+    message?: string;
     logMessage?: string;
 }
 
@@ -9,13 +9,4 @@ export enum ResponseStatus {
     InvalidRequest,
     Error,
     UnhandledException
-}
-
-export enum TranslationCode {
-    UnknownError,
-    DataLoadError,
-    StartTaskSuccess,
-    StartTaskError,
-    AcceptOrderError,
-    FinalizeOrderError
 }

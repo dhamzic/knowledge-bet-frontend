@@ -1,0 +1,17 @@
+.title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    color: #565656;
+    margin-left: 0.5rem;
+}
+
+.header-container {
+    color: var(--text-color);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+}

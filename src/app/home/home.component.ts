@@ -1,7 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import * as signalR from '@microsoft/signalr';
+import { environment } from 'src/environments/environment';
 import { ITile } from './models/ITile';
 import { HomeService } from './services/home.service';
+
+const apiUrl = environment.apiUrl;
 
 @Component({
   selector: 'app-home',
@@ -18,6 +22,24 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.getHomeTiles();
+    this.signalRealTimeConfig();
+  }
+
+  signalRealTimeConfig(): void{
+    const connection = new signalR.HubConnectionBuilder()  
+      .configureLogging(signalR.LogLevel.Information)  
+      .withUrl(`${apiUrl}appHub`)
+      .build();  
+  
+    connection.start().then(function () {  
+      console.log('SignalR Connected!');  
+    }).catch(function (err) {  
+      return console.error(err.toString());  
+    });  
+  
+    connection.on("transferTilesData", () => {
+      this.getHomeTiles();  
+    });  
   }
 
   getHomeTiles() {

@@ -1,1 +1,26 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+
+body,
+input[type="text"],
+button {
+    color: #565656;
+}
+
+h4 {
+    margin-top: 0;
+    color: #565656;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.main-container {
+    padding: 0 1rem 0 4rem;
+}

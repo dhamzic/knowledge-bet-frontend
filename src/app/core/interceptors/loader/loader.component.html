@@ -1,0 +1,7 @@
+<p-toast position="top-center" [baseZIndex]=1200></p-toast>
+<div class="loading-spinner-container flex mr-2" *ngIf="loading">
+    <span>Loading...</span>
+    <!-- <i class="pi pi-spin pi-spinner" style="font-size: 1.5rem; margin-right: 1rem"></i> -->
+    <p-progressSpinner [style]="{width: '1.5rem', height: '1.5rem'}" styleClass="custom-spinner" strokeWidth="4"
+        animationDuration="2s"></p-progressSpinner>
+</div>
