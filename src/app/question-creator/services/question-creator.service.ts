@@ -1,29 +1,29 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { ITile } from '../models/ITile';
 import { catchError, map, tap } from 'rxjs/operators';
-import { IGetHomeComponentTilesResponse } from 'src/app/core/httpResponses/IGetHomeComponentTilesResponse';
+import { IGetCategoriesResponse } from 'src/app/core/httpResponses/IGetCategoriesResponse';
+import { environment } from 'src/environments/environment';
+import { ICategory } from '../models/ICategory';
 
 const apiUrl = environment.apiUrl;
 
 @Injectable({
   providedIn: 'root'
 })
-export class HomeService {
+export class QuestionCreatorService {
 
   constructor(private http: HttpClient) { }
 
-  getTiles(): Observable<ITile[]> {
-    const url = `${apiUrl}api/v1/configurations/home-component-tiles`;
-    return this.http.get<IGetHomeComponentTilesResponse>(url)
+  getCategories(): Observable<ICategory[]> {
+    const url = `${apiUrl}api/v1/categories`;
+    return this.http.get<IGetCategoriesResponse>(url)
       .pipe(
         map(res => {
           return res.data;
         }),
         tap(data => {
-          console.log('getTiles: ' + JSON.stringify(data));
+          console.log('getCategories: ' + JSON.stringify(data));
         }),
         catchError(err => this.handleError(err))
       );

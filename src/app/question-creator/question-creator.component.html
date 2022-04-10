@@ -1,0 +1,25 @@
+<div class="main-container">
+    <div style="display: flex; flex-direction: column; margin-bottom: 1rem; margin-top: 1rem;">
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label">Select category:</label>
+            <div class="col-md-9">
+                <div class="p-grid p-fluid">
+                    <p-dropdown autoWidth="false" [style]="{'width':'20rem'}" [filter]="true" filterBy="name"
+                    [options]="categories" [(ngModel)]="selectedCategory" optionLabel="name"
+                    (onChange)="onCategoriesChange()" placeholder="Select a Category"></p-dropdown>
+                </div>
+            </div>
+        </div>
+        <div class="form-group row" *ngIf="selectedCategory">
+            <label class="col-md-3 col-form-label">Select subcategory:</label>
+            <div class="col-md-9">
+                <div class="p-grid p-fluid">
+                    <p-dropdown autoWidth="false" [style]="{'width':'20rem'}" [filter]="true" filterBy="name"
+                    [options]="subcategories" [(ngModel)]="selectedSubcategory" optionLabel="name"
+                    (onChange)="onSubcategoriesChange()" placeholder="Select a Category"></p-dropdown>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>

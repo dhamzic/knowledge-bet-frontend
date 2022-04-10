@@ -6,10 +6,12 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
 // import { DialogModule } from 'primeng/dialog';
 // import { InputTextareaModule } from 'primeng/inputtextarea';
 // import { InputTextModule } from 'primeng/inputtext';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
     imports: [
         ButtonModule,
+        DropdownModule,
         // TableModule,
         ToastModule,
         ProgressSpinnerModule,
@@ -19,6 +21,7 @@ import { ProgressSpinnerModule } from 'primeng/progressspinner';
     ],
     exports: [
         ButtonModule,
+        DropdownModule,
         // TableModule,
         ToastModule,
         ProgressSpinnerModule,

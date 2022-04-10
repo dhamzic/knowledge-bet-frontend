@@ -10,7 +10,12 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () =>
-      import('./home/home.module').then(c => c.HomeModule)
+      import('./home/home.module').then(h => h.HomeModule)
+  },
+  {
+    path: 'question-creator',
+    loadChildren: () =>
+      import('./question-creator/question-creator.module').then(q => q.QuestionCreatorModule)
   },
   {
     path: '**',
