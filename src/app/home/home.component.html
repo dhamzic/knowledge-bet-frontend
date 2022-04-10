@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div class="grid">
+    <div *ngFor="let tile of tiles" [class]="width" (window:resize)="onResize($event)">
+        <a *ngIf="tile.route" [routerLink]="[tile.route]">
+            <div class="box">
+                <div class="tile-content">
+                    <h1>{{ tile.title}}</h1>
+                </div>
+            </div>
+        </a>
+    </div>
+</div>

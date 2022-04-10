@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ButtonModule } from 'primeng/button';
@@ -13,7 +14,8 @@ import { PrimengModule } from './shared/primeng.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PrimengModule
+    PrimengModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
