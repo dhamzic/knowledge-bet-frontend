@@ -3,8 +3,10 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
 import { IGetCategoriesResponse } from 'src/app/core/httpResponses/IGetCategoriesResponse';
+import { IGetQuestionsFromSpecificSubcategoryResponse } from 'src/app/core/httpResponses/IGetQuestionsFromSpecificSubcategoryResponse';
 import { environment } from 'src/environments/environment';
 import { ICategory } from '../models/ICategory';
+import { IQuestion } from '../models/IQuestion';
 
 const apiUrl = environment.apiUrl;
 
@@ -24,6 +26,31 @@ export class QuestionCreatorService {
         }),
         tap(data => {
           console.log('getCategories: ' + JSON.stringify(data));
+        }),
+        catchError(err => this.handleError(err))
+      );
+  }
+
+  getQuestionsFromSpecificSubcategory(subcategoryId: number): Observable<IQuestion[]> {
+    const url = `${apiUrl}api/v1/questions/subcategory/${subcategoryId}`;
+    return this.http.get<IGetQuestionsFromSpecificSubcategoryResponse>(url)
+      .pipe(
+        map(res => {
+          return res.data;
+        }),
+        tap(data => {
+          console.log('getQuestionsFromSpecificSubcategory: ' + JSON.stringify(data));
+        }),
+        catchError(err => this.handleError(err))
+      );
+  }
+
+  deleteQuestion(questionId: number): Observable<any> {
+    const url = `${apiUrl}api/v1/questions/delete/${questionId}`;
+    return this.http.delete(url)
+      .pipe(
+        tap(data => {
+          console.log('deleteQuestion: ' + questionId);
         }),
         catchError(err => this.handleError(err))
       );

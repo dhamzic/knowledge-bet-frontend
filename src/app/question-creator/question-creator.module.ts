@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { PrimengModule } from "../shared/primeng.module";
 import { QuestionCreatorRoutingModule } from "./question-creator-routing.module";
 import { QuestionCreatorComponent } from "./question-creator.component";
+import { QuestionsComponent } from './questions/questions.component';
 
 @NgModule({
     imports: [
@@ -13,7 +14,8 @@ import { QuestionCreatorComponent } from "./question-creator.component";
         FormsModule
     ],
     declarations: [
-        QuestionCreatorComponent
+        QuestionCreatorComponent,
+        QuestionsComponent
     ]
 })
 export class QuestionCreatorModule { }

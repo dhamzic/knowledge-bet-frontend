@@ -45,13 +45,13 @@ export class LoaderInterceptor implements HttpInterceptor {
                     let err: BaseResponse = error.error;
                     if (err.logMessage) console.error(err.logMessage);
 
-                    if (err.message) {
+                    if (err.logMessage) {
 
                         this.messageService.add(
                             {
                                 severity: 'error',
                                 summary: 'Error',
-                                detail: err.message,
+                                detail: err.logMessage,
                             });
                     }
 
@@ -64,15 +64,12 @@ export class LoaderInterceptor implements HttpInterceptor {
                             let url = event.url;
                             let response: BaseResponse = event.body;
 
-                            if (event.status == 200 && !url?.toLowerCase().includes("i18n")) {
-                                if (response.message) {
-                                    this.messageService.add(
-                                        {
-                                            severity: 'success',
-                                            summary: 'Success',
-                                            detail: response.message,
-                                        });
-                                }
+                            if (event.status == 204 && !url?.toLowerCase().includes("i18n")) {
+                                this.messageService.add(
+                                    {
+                                        severity: 'success',
+                                        summary: 'Success',
+                                    });
                             }
                         }
                     }
