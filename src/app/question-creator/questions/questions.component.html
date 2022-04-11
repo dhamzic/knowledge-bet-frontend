@@ -50,3 +50,9 @@
         </ng-template>
     </p-table>
 </div>
+
+<p-dialog *ngIf="newQuestionDialogVisible" header="New Question" [(visible)]="newQuestionDialogVisible" [modal]="true"
+    [breakpoints]="{'960px': '75vw', '640px': '100vw'}" [style]="{width: '40vw', height: '100vh'}" [maximizable]="true"
+    [dismissableMask]="true">
+    <app-new-question [subcategoryId]='subcategoryId'></app-new-question>
+</p-dialog>

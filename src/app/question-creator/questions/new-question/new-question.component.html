@@ -1,0 +1,47 @@
+<div style="display: flex; flex-direction: column; margin-bottom: 1rem; margin-top: 1rem;">
+    <form (ngSubmit)="createQuestion()" [formGroup]="formGroup">
+        <div class="grid">
+            <div class="col">
+                <div class="field">
+                    <label>Subcategory</label>
+                    <input pInputText id="subcategoryId" type="text" formControlName="subcategory" class="w-full" />
+                </div>
+                <div class="field">
+                    <label>Text</label>
+                    <input pInputText id="textId" type="text" formControlName="text" class="w-full" />
+                </div>
+                <div class="field">
+                    <label>Option 1</label>
+                    <input pInputText id="option1" type="text" formControlName="firstOption" class="w-full" />
+                </div>
+                <div class="field">
+                    <label>Option 2</label>
+                    <input pInputText id="option2" type="text" formControlName="secondOption" class="w-full" />
+                </div>
+                <div class="field">
+                    <label>Option 3</label>
+                    <input pInputText id="option3" type="text" formControlName="thirdOption" class="w-full" />
+                </div>
+                <div class="field">
+                    <label>Option 4</label>
+                    <input pInputText id="option4" type="text" formControlName="fourthOption" class="w-full" />
+                </div>
+                <div class="field">
+                    <p-dropdown [style]="{'width':'100%'}" id="correctOptionId" [showClear]="true" formControlName="correctOption"
+                        placeholder="Choose correct answer (required)"
+                        [options]="options" optionLabel="option" optionValue="option">
+                    </p-dropdown>
+                </div>
+
+            </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end;">
+            <p-button type="submit"
+                [title]="formGroup.valid ? 'Save your entered data' : 'Disabled until the form data is valid'"
+                [disabled]="!formGroup.valid">
+                Create
+            </p-button>
+        </div>
+    </form>
+</div>

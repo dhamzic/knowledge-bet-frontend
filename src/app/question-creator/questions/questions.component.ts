@@ -13,6 +13,7 @@ import { QuestionCreatorService } from '../services/question-creator.service';
 export class QuestionsComponent implements OnInit {
 
   @Input() questions: IQuestion[] = [];
+  @Input() subcategoryId?: number;
 
   @Output() newQuestions: EventEmitter<void> = new EventEmitter<void>();
 
@@ -29,8 +30,8 @@ export class QuestionsComponent implements OnInit {
 
   constructor(private questionCreatorService: QuestionCreatorService) {
     this.cols = [
-      { field: 'category', header: 'Category', type: "text", value: (obj: IQuestion) => obj.category },
-      { field: 'subcategory', header: 'Subcategory', type: "text", value: (obj: IQuestion) => obj.subcategory },
+      { field: 'category', header: 'Category', type: "text", value: (obj: IQuestion) => obj.category.name },
+      { field: 'subcategory', header: 'Subcategory', type: "text", value: (obj: IQuestion) => obj.subcategory.name },
       { field: 'text', header: 'Text', type: "text", value: (obj: IQuestion) => obj.text }
     ];
 
@@ -62,8 +63,9 @@ export class QuestionsComponent implements OnInit {
     });
   }
 
+  newQuestionDialogVisible: boolean = false;
   openNew(): void {
-
+    this.newQuestionDialogVisible = true;
   }
 
 }

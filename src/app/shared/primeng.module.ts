@@ -3,9 +3,9 @@ import { ButtonModule } from 'primeng/button';
 import { TableModule } from 'primeng/table';
 import { ToastModule } from 'primeng/toast';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
-// import { DialogModule } from 'primeng/dialog';
+import { DialogModule } from 'primeng/dialog';
 // import { InputTextareaModule } from 'primeng/inputtextarea';
-// import { InputTextModule } from 'primeng/inputtext';
+import { InputTextModule } from 'primeng/inputtext';
 import { DropdownModule } from 'primeng/dropdown';
 import {ToolbarModule} from 'primeng/toolbar';
 
@@ -16,10 +16,10 @@ import {ToolbarModule} from 'primeng/toolbar';
         TableModule,
         ToastModule,
         ProgressSpinnerModule,
-        ToolbarModule
-        // DialogModule,
+        ToolbarModule,
+        DialogModule,
         // InputTextareaModule,
-        // InputTextModule,
+        InputTextModule,
     ],
     exports: [
         ButtonModule,
@@ -27,10 +27,10 @@ import {ToolbarModule} from 'primeng/toolbar';
         TableModule,
         ToastModule,
         ProgressSpinnerModule,
-        ToolbarModule
-        // DialogModule,
+        ToolbarModule,
+        DialogModule,
         // InputTextareaModule,
-        // InputTextModule
+        InputTextModule
     ],
     declarations: [
     ]

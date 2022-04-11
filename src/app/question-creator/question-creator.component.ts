@@ -60,7 +60,6 @@ export class QuestionCreatorComponent implements OnInit {
   }
 
   getQuestions() {
-    debugger;
     if(this.selectedSubcategory){
       this.questionCreatorService.getQuestionsFromSpecificSubcategory(this.selectedSubcategory.id)
       .subscribe((data: IQuestion[]) => {
